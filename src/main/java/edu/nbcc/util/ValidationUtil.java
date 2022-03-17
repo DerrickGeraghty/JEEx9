@@ -61,7 +61,8 @@ public class ValidationUtil {
 	 */
 	public static int getTerm(HttpServletRequest request, String key, List<String> errorList) {
 		try {
-			return Integer.parseInt(request.getParameter(key));
+			String bookterm = request.getParameter(key);
+			return Integer.parseInt(bookterm);
 		} catch (Exception e) {
 			errorList.add("Value for " + key + " is not valid");
 			return 0;
